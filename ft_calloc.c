@@ -6,7 +6,7 @@
 /*   By: marojas- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:23:01 by marojas-          #+#    #+#             */
-/*   Updated: 2024/05/21 16:04:18 by marojas-         ###   ########.fr       */
+/*   Updated: 2024/06/06 14:23:01 by marojas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,15 +18,13 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*resultado;
 
+	if (count == 0 || size == 0)
+		resultado = "(null)";
 	if (SIZE_MAX / count < size)
-	{
 		return (NULL);
-	}
 	resultado = malloc(count * size);
 	if (resultado == NULL)
-	{
 		return (NULL);
-	}
 	else
 	{
 		ft_bzero(resultado, count * size);
